@@ -1,0 +1,45 @@
+{
+  "name": "crm-electron",
+  "version": "1.0.0",
+  "description": "CRM Application with Electron, Vue, TypeScript, and SQLite",
+  "main": "dist/main/main.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc --noEmit && vite build",
+    "electron:dev": "concurrently \"vite\" \"electron .\"",
+    "electron:build": "vue-tsc --noEmit && vite build && electron-builder"
+  },
+  "dependencies": {
+    "electron": "^25.3.1",
+    "pinia": "^2.1.6",
+    "sqlite3": "^5.1.6",
+    "vue": "^3.3.4",
+    "vue-router": "^4.2.4"
+  },
+  "devDependencies": {
+    "@types/node": "^20.17.24",
+    "@vitejs/plugin-vue": "^4.2.3",
+    "@vue/compiler-sfc": "^3.3.4",
+    "autoprefixer": "^10.4.14",
+    "concurrently": "^8.2.0",
+    "electron-builder": "^24.6.3",
+    "postcss": "^8.4.27",
+    "tailwindcss": "^3.3.3",
+    "typescript": "^5.1.6",
+    "vite": "^4.4.7",
+    "vue-tsc": "^1.8.8"
+  },
+  "build": {
+    "appId": "com.crm.electron",
+    "mac": {
+      "category": "public.app-category.business"
+    },
+    "directories": {
+      "output": "release/"
+    },
+    "files": [
+      "dist/**/*",
+      "electron/**/*"
+    ]
+  }
+}
